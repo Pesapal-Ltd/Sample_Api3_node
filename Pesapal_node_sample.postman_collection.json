@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "c93f6d8c-c63a-4dd3-917c-236757786f72",
+		"name": "Pesapal_node_sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11070132"
+	},
+	"item": [
+		{
+			"name": "Ipn_reg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ipn_notification_type\": \"GET\",\r\n  \"url\": \"https://yourcallbackurl.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/register-ipn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"register-ipn"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ipn_reg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ipn_notification_type\": \"GET\",\r\n  \"url\": \"http://localhost:3001/ipn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/register-ipn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"register-ipn"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12b-jV4kRs/fc82HYLo65s7rdKFFHe8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 15:36:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"url\": \"http://localhost:3001/ipn\",\n    \"created_date\": \"2024-09-26T15:36:33.0680651Z\",\n    \"ipn_id\": \"fb2729ab-6666-4386-9c55-dcb524d42417\",\n    \"notification_type\": 0,\n    \"ipn_notification_type_description\": \"GET\",\n    \"ipn_status\": 1,\n    \"ipn_status_decription\": \"Active\",\n    \"status\": \"200\",\n    \"message\": \"Request processed successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "submit order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": \"15tyytyuwwewtyuj67877801\", //This represents your Unique ID which you send to us\r\n\"currency\": \"KES\",// EG USD OR KES\r\n\"amount\": 1,\r\n\"description\": \"TEST INVOICE\",\r\n\"callback_url\": \"https://url.com\", //This should ideally be a route from your client application eg next etc etc\r\n\"notification_id\": \"fb2729ab-6666-4386-9c55-dcb524d42417\",\r\n\"billing_address\": {\r\n    \"phone_number\": \"32456788789\",\r\n    \"email_address\": \"john@mail.com\",\r\n    \"country_code\": \"KE\",\r\n    \"first_name\": \"John\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"Doe\",\r\n    \"line_1\": \"Nairobi\",\r\n    \"line_2\": \"Crescent\",\r\n    \"city\": \"Nairobi\",\r\n    \"state\": \"\",\r\n    \"postal_code\": \"1245\",\r\n    \"zip_code\": \"\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/submit-order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"submit-order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sample_submit_response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": \"15tyytyuwwewtyuj67877801\", //This represents your Unique ID which you send to us\r\n\"currency\": \"KES\",// EG USD OR KES\r\n\"amount\": 1,\r\n\"description\": \"TEST INVOICE\",\r\n\"callback_url\": \"https://url.com\",\r\n\"notification_id\": \"fb2729ab-6666-4386-9c55-dcb524d42417\",\r\n\"billing_address\": {\r\n    \"phone_number\": \"32456788789\",\r\n    \"email_address\": \"john@mail.com\",\r\n    \"country_code\": \"KE\",\r\n    \"first_name\": \"John\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"Doe\",\r\n    \"line_1\": \"Nairobi\",\r\n    \"line_2\": \"Crescent\",\r\n    \"city\": \"Nairobi\",\r\n    \"state\": \"\",\r\n    \"postal_code\": \"1245\",\r\n    \"zip_code\": \"\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/submit-order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"submit-order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "267"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10b-IX2Y2nunlx3vWVnLo/4dAnQY4Bc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 16:48:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"order_tracking_id\": \"503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3\",\n    \"merchant_reference\": \"15tyytyuwwewtyuj67877801\",\n    \"redirect_url\": \"https://cybqa.pesapal.com/pesapaliframe/PesapalIframe3/Index?OrderTrackingId=503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3\",\n    \"error\": null,\n    \"status\": \"200\"\n}"
+				}
+			]
+		},
+		{
+			"name": "check_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/transaction-status?orderTrackingId=503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"transaction-status"
+					],
+					"query": [
+						{
+							"key": "orderTrackingId",
+							"value": "503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sample_status_check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/transaction-status?orderTrackingId=503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"transaction-status"
+							],
+							"query": [
+								{
+									"key": "orderTrackingId",
+									"value": "503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "766"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2fe-vTQX0sLLWUMk4vLGV44fFpQSjQg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 16:51:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"payment_method\": \"\",\n    \"amount\": 1,\n    \"created_date\": \"2024-09-26T19:48:24.943\",\n    \"confirmation_code\": \"\",\n    \"order_tracking_id\": \"503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3\",\n    \"payment_status_description\": \"INVALID\",\n    \"description\": null,\n    \"message\": \"Request processed successfully\",\n    \"payment_account\": \"\",\n    \"call_back_url\": \"https://url.com?OrderTrackingId=503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3&OrderMerchantReference=15tyytyuwwewtyuj67877801\",\n    \"status_code\": 0,\n    \"merchant_reference\": \"15tyytyuwwewtyuj67877801\",\n    \"payment_status_code\": \"\",\n    \"currency\": \"KES\",\n    \"error\": {\n        \"error_type\": \"api_error\",\n        \"code\": \"payment_details_not_found\",\n        \"message\": \"Pending Payment\",\n        \"call_back_url\": \"https://url.com?OrderTrackingId=503f0706-c7b2-44a8-a6f4-dcb5bbb2c8a3&OrderMerchantReference=15tyytyuwwewtyuj67877801\"\n    },\n    \"status\": \"500\"\n}"
+				}
+			]
+		}
+	]
+}
